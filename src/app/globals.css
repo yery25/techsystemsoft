@@ -1126,129 +1126,6 @@ h1, h2, h3, h4, h5 {
   color: var(--fg);
 }
 
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card-3d-container {
-    max-width: 420px;
-    margin: 0 auto;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .project-card:nth-child(even) {
-    direction: ltr;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .contact-card {
-    padding: 3rem 2rem;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1.25rem;
-  }
-
-  .hero {
-    padding-top: 4rem;
-  }
-
-  .hero-stats {
-    gap: 2rem;
-  }
-
-  .header-nav {
-    display: none;
-  }
-
-  .header-toggle {
-    display: flex;
-  }
-
-  .hero-actions {
-    gap: 0.75rem;
-  }
-
-  .btn {
-    padding: 0.75rem 1.4rem;
-    font-size: 0.9rem;
-  }
-
-  .about {
-    padding: 5rem 0;
-  }
-
-  .about-mini-cards {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .stack-groups {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .projects {
-    padding: 5rem 0;
-  }
-
-  .projects-list {
-    gap: 4rem;
-  }
-
-  .team {
-    padding: 5rem 0;
-  }
-
-  .contact {
-    padding: 5rem 0;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .hero-badge {
-    font-size: 0.6rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-stats {
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .projects-title {
-    font-size: 2rem;
-  }
-}
-
 /* ===================== TEAM SECTION ===================== */
 .team {
   padding: 8rem 0;
@@ -1551,3 +1428,63 @@ h1, h2, h3, h4, h5 {
   50% { transform: translateY(-6px) rotate(3deg); }
 }
 
+/* ===================== COMPREHENSIVE RESPONSIVE ===================== */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+  .hero-actions { justify-content: center; }
+  .hero-subtitle { margin-left: auto; margin-right: auto; }
+  .hero-stats { justify-content: center; }
+  
+  .card-3d-container { max-width: 420px; margin: 0 auto; }
+  
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .project-card { grid-template-columns: 1fr; gap: 2rem; }
+  .project-card:nth-child(even) { direction: ltr; }
+  .project-card:nth-child(even) > * { direction: ltr; }
+  
+  .team-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1.5rem; }
+  
+  .header-nav { display: none; }
+  .header-toggle { display: flex; }
+  
+  .hero { padding-top: 6rem; min-height: auto; padding-bottom: 4rem; }
+  .hero-title { font-size: clamp(2.5rem, 8vw, 3.5rem); }
+  .hero-stats { gap: 2rem; flex-wrap: wrap; }
+  
+  .about, .projects, .team, .contact { padding: 4rem 0; }
+  .about-card, .contact-card { padding: 2rem 1.5rem; }
+  .team-card { padding: 2rem 1.5rem; }
+  
+  .about-mini-cards { grid-template-columns: 1fr 1fr; }
+  .stack-groups { grid-template-columns: 1fr; gap: 2rem; }
+  .projects-list { gap: 4rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; text-align: center; gap: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .hero-actions { flex-direction: column; width: 100%; gap: 1rem; }
+  .btn { width: 100%; padding: 1rem; justify-content: center; }
+  .hero-stats { gap: 1.5rem; }
+  .hero-stat-value { font-size: 1.4rem; }
+  
+  .card-3d-container { max-width: 100%; aspect-ratio: auto; min-height: 350px; }
+  .card-3d-title { font-size: 1.4rem; }
+  
+  .about-mini-cards { grid-template-columns: 1fr; }
+  .about-card-title, .stack-section-title, .projects-title, .team-title, .contact-title { font-size: 2rem; }
+  
+  .team-card-container { perspective: 800px; }
+  .team-avatar { width: 80px; height: 80px; }
+  .team-avatar-text { font-size: 1.8rem; }
+  .team-name { font-size: 1.4rem; }
+  
+  .project-mockup { aspect-ratio: 4/3; }
+}
