@@ -8,7 +8,7 @@ export default function Team() {
   const teamMembers = [
     {
       name: 'Ing. Yery Pérez',
-      role: 'Co-Founder & Lead Developer',
+      role: 'Co-Founder & Ingeniero Programador Senior',
       specialization: 'Especialista en Desarrollo Full-Stack & Inteligencia Artificial',
       phone: '+1 (849) 654-0294',
       email: 'yeriantonio52@gmail.com',
@@ -21,7 +21,7 @@ export default function Team() {
     },
     {
       name: 'Ing. Thevenin',
-      role: 'Co-Founder & Cybersecurity Specialist',
+      role: 'Co-Founder & Ingeniero Programador Senior',
       specialization: 'Especialista en Ciberseguridad & Infraestructura Segura',
       phone: '+1 (829) 571-4555',
       email: 'Thevenin.negocios@gmail.com',
@@ -32,6 +32,7 @@ export default function Team() {
         <Terminal key="terminal" size={20} style={{ color: '#7F00FF' }} />
       ]
     }
+
   ];
 
   return (
