@@ -1158,6 +1158,11 @@ h1, h2, h3, h4, h5 {
   .contact-card {
     padding: 3rem 2rem;
   }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1210,6 +1215,10 @@ h1, h2, h3, h4, h5 {
     gap: 4rem;
   }
 
+  .team {
+    padding: 5rem 0;
+  }
+
   .contact {
     padding: 5rem 0;
   }
@@ -1239,3 +1248,306 @@ h1, h2, h3, h4, h5 {
     font-size: 2rem;
   }
 }
+
+/* ===================== TEAM SECTION ===================== */
+.team {
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.team-glow-1 {
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 82, 212, 0.05) 0%, transparent 70%);
+  filter: blur(60px);
+}
+
+.team-glow-2 {
+  position: absolute;
+  bottom: 20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(127, 0, 255, 0.04) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+.team-header {
+  margin-bottom: 5rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.team-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-top: 1rem;
+}
+
+.team-subtitle {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 1.5rem auto 0 auto;
+  line-height: 1.7;
+}
+
+.team-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 3D TEAM CARD */
+.team-card-container {
+  width: 100%;
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+.team-card {
+  width: 100%;
+  max-width: 450px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(0, 82, 212, 0.03) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 82, 212, 0.1);
+  padding: 3rem;
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  box-shadow: 0 25px 70px rgba(0, 82, 212, 0.06);
+}
+
+.team-card:hover {
+  border-color: rgba(0, 114, 255, 0.35);
+  box-shadow: 0 35px 90px rgba(0, 82, 212, 0.12);
+}
+
+.team-card-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle at center, rgba(0, 82, 212, 0.08) 0%, transparent 70%);
+  filter: blur(40px);
+  opacity: 0;
+  z-index: -1;
+  transform: translateZ(-20px);
+  transition: opacity 0.5s ease;
+}
+
+.team-card:hover .team-card-glow {
+  opacity: 1;
+}
+
+.team-card-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+  z-index: 10;
+  background: radial-gradient(circle 250px at 50% 50%, rgba(255, 255, 255, 0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.team-card:hover .team-card-glare {
+  opacity: 1;
+}
+
+.team-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  z-index: 2;
+  transform-style: preserve-3d;
+}
+
+.team-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+.team-card:hover .team-avatar {
+  transform: translateZ(50px) scale(1.05);
+}
+
+.team-avatar-text {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transform-style: preserve-3d;
+}
+
+.team-name {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--fg);
+  letter-spacing: -0.02em;
+}
+
+.team-role {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.team-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--border);
+  margin: 0.5rem 0;
+}
+
+.team-specialization {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.team-contacts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transform-style: preserve-3d;
+}
+
+.team-contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--border);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.team-contact-item:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 82, 212, 0.2);
+}
+
+.team-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  flex: 1;
+  transition: color 0.3s ease;
+}
+
+.team-contact-link:hover {
+  color: var(--primary);
+}
+
+.team-contact-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.team-copy-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.team-copy-btn:hover {
+  color: var(--fg);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.text-success {
+  color: #10b981 !important;
+}
+
+/* Floating Badges */
+.team-badge {
+  position: absolute;
+  z-index: 5;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-out;
+}
+
+.team-badge-1 {
+  top: 15px;
+  right: -15px;
+}
+
+.team-badge-2 {
+  bottom: 25px;
+  left: -15px;
+}
+
+.team-badge-inner {
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  animation: float-badge 5s ease-in-out infinite;
+}
+
+.team-badge-2 .team-badge-inner {
+  animation-delay: 2s;
+}
+
+@keyframes float-badge {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(3deg); }
+}
+

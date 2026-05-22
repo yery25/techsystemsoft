@@ -1,7 +1,9 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
+import Team from '@/components/Team';
 import Contact from '@/components/Contact';
+
 
 export default function Home() {
   return (
@@ -67,6 +69,7 @@ export default function Home() {
         </section>
 
         <Projects />
+        <Team />
         <Contact />
       </main>
 
