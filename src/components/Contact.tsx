@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Phone, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -19,28 +19,6 @@ export default function Contact() {
               <p className="contact-subtitle">
                 Have a software project in mind, need a system setup, or want to consult on scaling your business? Reach out to us.
               </p>
-
-              <div className="contact-info-list">
-                <div className="contact-info-item">
-                  <div className="contact-info-icon primary">
-                    <Mail size={22} />
-                  </div>
-                  <div>
-                    <p className="contact-info-label">Email</p>
-                    <p className="contact-info-value">yeriantonio52@gmail.com</p>
-                  </div>
-                </div>
-
-                <div className="contact-info-item">
-                  <div className="contact-info-icon accent">
-                    <Phone size={22} />
-                  </div>
-                  <div>
-                    <p className="contact-info-label">Phone</p>
-                    <p className="contact-info-value">+1 (849) 654-0294</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Right: Form */}

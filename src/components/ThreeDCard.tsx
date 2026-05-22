@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Code, Sparkles, Terminal } from 'lucide-react';
+import { Code, Sparkles } from 'lucide-react';
 import Logo from './Logo';
 
 export default function ThreeDCard() {
